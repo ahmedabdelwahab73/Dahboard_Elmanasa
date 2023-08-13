@@ -1,0 +1,437 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+:root{
+    --blue: #172f6e;
+    --white: white;
+    --black: black;
+    --orange: #FF9001;
+    --lead: #8D8D8D;
+    --footer: #356DFE;
+    --link-hover: #FF9001;
+    --text-background: #D9D9D97D;
+    --padding-page: 84px 60px;
+    --padding-left-right: 0px 60px;
+    --pading-left769: 40px;
+    --pading-left561: 25px;
+    --pading-left438: 20px;
+    --text-padding: 20px 25px 20px 20px;
+}
+body {
+    font-size: 15px;
+    /* direction: rtl; */
+    overflow-y: hidden;
+}
+a {
+    text-decoration: none;
+    font-size: 1em;
+}
+li {
+    list-style: none;
+}
+/* ================== Start Main =================*/
+.main{
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+.main > article{
+    width: calc(100vw - 250px);
+    direction: rtl;
+    transition: width 0.8s ease;
+}
+.main header {
+    width: calc(100vw - 250px);
+    height: 92px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr;
+    padding: 0px 30px;
+    background: #fff;
+    border-bottom: 2px solid var(--blue);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: width 0.8s ease;
+}
+.main header a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+.main header a img{
+    height: 92px;
+}
+.main header a h2{
+    color: var(--orange);
+    font-size: 2rem;
+}
+.main header i{
+    font-size: 2rem;
+    color: var(--orange);
+    cursor: pointer;
+}
+.main section{
+    min-height: 100%;
+    background: #d7d2d2;
+    padding: 92px 23px
+}
+.main section .top-table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 0px 30px 0px;
+}
+.main section .top-table select{
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.main section .top-table label{
+    position: relative;
+}
+.main section .top-table label input{
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px 10px 0px;
+    font-size: 1.2rem;
+}
+.main section .top-table label i{
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    font-size: 1.3rem;
+}
+.main section .wapper-table{
+    max-height: calc(100vh - 224px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.main section table{
+    width: 100%;
+    border: 1px solid var(--blue);
+    border-collapse: collapse;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.main section table thead {
+    position: sticky;
+    top: -1px;
+    background-color: #fff;
+    z-index: 10000;
+}
+.main section table tbody tr{
+    transition: 0.5s ease;
+}
+.main section table tbody tr:hover{
+    background-color: #172f6ee8;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background-color: #fff;
+}
+.main section table thead th{
+    border-left: 1px solid;
+    height: 70px;
+    font-size: 1.5rem;
+}
+.main section table tbody td{
+    border: 1px solid var(--blue);
+    text-align: center;
+    height: 50px;
+}
+.main section table tbody td .btn{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: none;
+}
+.main section table tbody td .icon-crop{
+    color: #009688;
+}
+.main section table tbody td .icon-bin{
+    color: #E91E63;
+}
+.main section .buttom-table{
+    display: flex;
+    height: 53px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 7.5px 0px;
+    position: fixed;
+    left: 0px;
+    width: calc(100vw - 110px);
+    bottom: 0;
+    padding: 0 39px;
+
+}
+.main section .buttom-table > article{
+    background-color: #fff;
+    padding: 7.5px 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+.main section .buttom-table > ul{
+    background-color: #fff;
+    padding: 7.5px 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+.main section .buttom-table .pagination{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+/* .main section .buttom-table .pagination .list{
+    transform: translateX(10px);
+} */
+.main section .buttom-table .pagination .dis-n{
+    display: none;
+}
+.main section .buttom-table .pagination .dis-b{
+    display: block;
+}
+.main section .buttom-table .pagination p{
+    order: 3;
+}
+.main section .buttom-table .pagination .next{
+    order: 4;
+}
+.main section .buttom-table .pagination li span{
+    padding: 0px 5px;
+}
+.main section .buttom-table .pagination .active{
+    background-color: var(--blue);
+    color: #fff;
+    border-radius: 5px;
+
+}
+.main section .buttom-table .pagination .disable{
+    opacity: 0.5;
+}
+aside{
+    width: 250px;
+    position: fixed;
+    right: 0;
+    max-height: 100%;
+    direction: rtl;
+    background: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: width 0.8s ease;
+}
+
+/*===============  Start Add Class Js  ==============*/
+.aside1{
+    visibility: visible;
+}
+.aside1 .big ul ul li{
+    padding: 10px 0px;
+    width: 100%;
+    padding-right: 20px !important;
+        font-size: 1.3rem;
+
+}
+.aside1 .big ul ul li > a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+.main .visible-hi{
+    visibility: hidden;
+}
+.aside2 {
+    visibility: hidden;
+}
+.aside2 .links ul{
+    align-items: center;
+}
+.aside2 .links ul ul li{
+    text-align: center;
+}
+.aside2 .head{
+    justify-content: center;
+    padding-right: 0px;
+    height: 92px;
+}
+.main .visible-sh{
+    visibility: visible;
+}
+.main .less-width{
+    width: 110px;
+}
+.main .fill-width{
+    width: calc(100vw - 110px);
+}
+/*===============  End Add Class Js  ==============*/
+
+aside .head{
+    border-bottom: 2px solid var(--blue);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    height: 92px;
+    padding-right: 20px;
+}
+aside .head img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+aside .head .type h4{
+    font-size: 1.5rem;
+    width: 150px;
+}
+aside .links {
+    padding: 20px 0px;
+}
+aside .links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+aside .links ul li{
+    font-size: 1.8rem;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.5s linear;
+}
+aside .links ul li:hover{
+    background-color: var(--blue);
+    color: #fff;
+}
+aside .links ul .bg-active{
+    background-color: var(--blue);
+    color: #fff;
+}
+aside .links ul .show{
+    display: flex;
+}
+aside .links ul > a{
+    font-size: 1.8rem;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.5s linear;
+}
+aside .links ul > a:hover{
+    background-color: var(--blue);
+    color: #fff;
+}
+aside .links ul .active{
+    color: #fff;
+}
+aside .links .users,
+aside .links .content,
+aside .links .teacher
+{
+    display: none;
+}
+aside .links ul ul{
+    gap: 10px;
+}
+aside .links ul ul li{
+    padding: 10px 0px;
+    width: 100%;
+    /* text-align: center; */
+}
+aside .links ul ul li > a {
+text-decoration: none;
+color: black;
+font-size: 1.4rem;
+display: block;
+}
+aside .links ul ul > li:hover a{
+    color: white;
+}
+aside .links ul ul li > a i{
+    font-size: 2rem;
+}
+@media (max-width: 960px){
+    .main > article {
+        width: 100%;
+        z-index: 100;
+    }
+    .main header{
+        width: calc(100vw - 60px);
+    }
+    .main .fill-width{
+        width: 100%;
+    }
+    #aside1{
+        display: none;
+    }
+    #aside2{
+        z-index: 1000; 
+        min-height: 100vh;   
+        transition: all 0.8s ease;    
+    }
+    .main section .buttom-table{
+        width: 100%;
+    }
+    .main section table tbody td{
+        padding: 0 5px;
+    }
+    .main section table tbody td .btn{
+        display: flex;
+    }
+}
+@media(max-width: 375px){
+    .main header{
+        padding: 0 15px;
+    }
+    .main header a img{
+        height: 80px;
+    }
+    .main header a h2{
+        font-size: 1.8rem;
+    }
+    .main header i{
+        font-size: 1.8rem;
+    }
+    .main section{
+        padding: 92px 15px;
+    }
+    .main section .top-table label {
+        width: 60%;
+    }
+    .main section .buttom-table{
+        padding: 0px 20px;
+    }
+}
+.main .wd-100px{
+    width: 60px;
+}
+.main .wd-0px{
+    width: 0px;
+}
+
+/* ================== End Main =================*/
